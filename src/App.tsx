@@ -81,6 +81,27 @@ export default function App() {
               />
             </div>
           </div>
+          {/* GitHub Actions Notice */}
+          <div className="bg-[#111b21] rounded-xl border border-white/5 overflow-hidden mt-8">
+            <div className="bg-[#202c33] p-4 border-b border-white/5 flex items-center justify-between">
+              <h2 className="text-lg font-medium text-[#e9edef] flex items-center gap-2">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="text-[#8696a0]"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub Automated Releases
+              </h2>
+            </div>
+            <div className="p-5 flex gap-4">
+               <div className="space-y-3">
+                 <p className="text-[14px] text-[#8696a0] leading-relaxed">
+                   A GitHub Actions workflow has been added. If you push this repository to GitHub, you can automatically build and publish the <code className="text-[#d1d7db] font-mono bg-[#2a3942] px-1 py-0.5 rounded text-xs">.deb</code> package without running it locally.
+                 </p>
+                 <ul className="list-disc pl-5 text-[14px] text-[#8696a0] space-y-1">
+                   <li>Export the project to GitHub using the AI Studio settings menu.</li>
+                   <li>Create a new release tag starting with <code>v</code> (e.g., <code>v1.0.0</code>) and push it.</li>
+                   <li>The action will automatically install dependencies, build the package, and attach the <code>.deb</code> installer to the GitHub Release.</li>
+                 </ul>
+               </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
