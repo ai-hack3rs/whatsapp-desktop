@@ -54,9 +54,9 @@ A native Linux desktop application wrapper for WhatsApp Web, built with Electron
 
 ## Continuous Integration
 
-This repository includes a GitHub Actions workflow (`.github/workflows/build-and-release.yml`) that automatically builds and publishes the `.deb` and `.zip` packages whenever a new version tag (e.g., `v1.0.0`) is pushed to the repository. 
+This repository includes a GitHub Actions workflow (`.github/workflows/build-and-release.yml`) that automatically builds and publishes the `.deb` and `.zip` packages whenever you push changes to the `main` or `master` branches.
 
-You can also trigger the build manually from the GitHub Actions tab.
+A new release version will be automatically generated based on the workflow run number. You can also trigger the build manually from the GitHub Actions tab.
 
 ## License
 

@@ -110,8 +110,8 @@ export default function App() {
                  </p>
                  <ul className="list-disc pl-5 text-[14px] text-[#8696a0] space-y-1">
                    <li>Export the project to GitHub.</li>
-                   <li>Create a new release tag starting with <code>v</code> (e.g., <code>v1.0.0</code>) and push it.</li>
-                   <li>The action will automatically install dependencies, build the package, and attach the <code>.deb</code> installer to the GitHub Release.</li>
+                   <li>The GitHub Action will automatically run on every push to the main branch.</li>
+                   <li>The action will automatically install dependencies, build the package, and attach the <code>.deb</code> installer to a new GitHub Release with an auto-generated version.</li>
                  </ul>
                </div>
             </div>

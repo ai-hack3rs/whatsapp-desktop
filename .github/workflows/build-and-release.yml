@@ -2,14 +2,14 @@ name: Build and Release .deb
 
 on:
   push:
-    tags:
-      - 'v*' # Trigger on version tags, e.g., v1.0.0
+    branches:
+      - main
+      - master
   workflow_dispatch:
     inputs:
       version:
         description: 'Release version tag (e.g., v1.0.1)'
-        required: true
-        default: 'v1.0.1'
+        required: false
 
 permissions:
   contents: write
@@ -35,10 +35,19 @@ jobs:
         working-directory: ./whatsapp-desktop
         run: npm run make
 
+      - name: Generate Version Tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.version }}" != "" ]; then
+            echo "TAG_NAME=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          else
+            echo "TAG_NAME=v1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.version || github.ref_name }}
+          tag_name: ${{ steps.version.outputs.TAG_NAME }}
           files: |
             ./whatsapp-desktop/out/make/**/*.deb
             ./whatsapp-desktop/out/make/**/*.zip

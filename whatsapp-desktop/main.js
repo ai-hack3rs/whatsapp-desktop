@@ -14,6 +14,7 @@ const createWindow = () => {
     title: "WhatsApp",
     icon: path.join(__dirname, 'assets', 'icon.png'),
     webPreferences: {
+      partition: 'persist:whatsapp',
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
@@ -27,7 +28,8 @@ const createWindow = () => {
   // We spoof the request headers to look like a standard Linux Chrome browser.
   const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36';
   
-  session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
+  const ses = session.fromPartition('persist:whatsapp');
+  ses.webRequest.onBeforeSendHeaders((details, callback) => {
     details.requestHeaders['User-Agent'] = userAgent;
     callback({ cancel: false, requestHeaders: details.requestHeaders });
   });
