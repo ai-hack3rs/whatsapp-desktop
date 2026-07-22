@@ -67,7 +67,7 @@ export default function App() {
               <Step 
                 number="1"
                 title="Export the Project"
-                description="Click the AI Studio settings menu (top right) and select 'Export to ZIP', then extract it on your local machine."
+                description="Export or download the project source code, then extract it on your local machine."
               />
               <Step 
                 number="2"
@@ -109,7 +109,7 @@ export default function App() {
                    A GitHub Actions workflow has been added. If you push this repository to GitHub, you can automatically build and publish the <code className="text-[#d1d7db] font-mono bg-[#2a3942] px-1 py-0.5 rounded text-xs">.deb</code> package without running it locally.
                  </p>
                  <ul className="list-disc pl-5 text-[14px] text-[#8696a0] space-y-1">
-                   <li>Export the project to GitHub using the AI Studio settings menu.</li>
+                   <li>Export the project to GitHub.</li>
                    <li>Create a new release tag starting with <code>v</code> (e.g., <code>v1.0.0</code>) and push it.</li>
                    <li>The action will automatically install dependencies, build the package, and attach the <code>.deb</code> installer to the GitHub Release.</li>
                  </ul>
