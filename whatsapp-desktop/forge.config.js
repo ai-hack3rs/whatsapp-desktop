@@ -2,7 +2,8 @@ module.exports = {
   packagerConfig: {
     asar: true,
     name: 'whatsapp-desktop',
-    executableName: 'whatsapp-desktop'
+    executableName: 'whatsapp-desktop',
+    icon: './assets/icon'
   },
   rebuildConfig: {},
   makers: [
@@ -11,7 +12,8 @@ module.exports = {
       config: {
         options: {
           maintainer: 'User',
-          homepage: 'https://web.whatsapp.com'
+          homepage: 'https://web.whatsapp.com',
+          icon: './assets/icon.png'
         }
       }
     },
